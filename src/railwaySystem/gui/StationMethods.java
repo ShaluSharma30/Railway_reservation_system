@@ -6,6 +6,7 @@
 package railwaySystem.gui;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import railwaySystem.dao.StationDao;
 import railwaySystem.pojo.Station;
@@ -34,5 +35,14 @@ public class StationMethods {
             System.out.println("Sation removed...");
         else
             System.out.println("Cannot remove the station! Try again.");
+    }
+    
+    public static void displayAllStations() throws SQLException{
+        List<Station> stations=StationDao.getAllStations();
+        System.out.println("Station Code\t Station name");
+        for(Station s:stations){
+            System.out.println(s.getStationCode()+"\t"+s.getStationName());
+            
+        }
     }
 }

@@ -56,10 +56,11 @@ public class AdminPage {
             System.out.println("5. Add Train");
             System.out.println("6. Edit Train Details");
             System.out.println("7. Remove Train");
-            System.out.println("8. Add Station");
-            System.out.println("9. Remove station");
-            System.out.println("10. Back");
-            System.out.println("11. Exit");
+            System.out.println("8. Get All stations");
+            System.out.println("9. Add Station");
+            System.out.println("10. Remove station");
+            System.out.println("11. Back");
+            System.out.println("12. Exit");
             System.out.println("Enter the option no.:");
             byte n;
             try {
@@ -94,14 +95,17 @@ public class AdminPage {
                         TrainMethods.deleteTrain();
                         break;
                     case 8:
-                        StationMethods.addStation();
+                        StationMethods.displayAllStations();
                         break;
                     case 9:
-                        StationMethods.removeStation();
+                        StationMethods.addStation();
                         break;
                     case 10:
-                        return;
+                        StationMethods.removeStation();
+                        break;
                     case 11:
+                        return;
+                    case 12:
                         System.exit(0);
                     default:
                         System.out.println("Please enter a valid option number");
